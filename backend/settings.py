@@ -1,4 +1,4 @@
-import os
+
 
 """
 Django settings for backend project.
@@ -80,21 +80,22 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+import os
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('taskdb'),
-        'USER': os.environ.get('3nYHK3A1V5M7qE6.root'),
-        'PASSWORD':os.environ.get( 'hG1MG7cHC5qWIC1g'),
-        'HOST': os.environ.get('gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com'),
-        'PORT': os.environ.get('4000'),
-        'OPTIONS': {
-           
-            'ssl': {
-                'ca': r'C:\Users\ELCOT\Desktop\Projects\task_manager\assets\isrgrootx1.pem',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
+        # 'OPTIONS': {
+        #     'ssl': {
+        #         'ca': BASE_DIR / 'certs' / 'isrgrootx1.pem',
+        #     }
+        # }
     }
-}
-}
 }
 
 # Password validation
