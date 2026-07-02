@@ -1,3 +1,5 @@
+import os
+
 """
 Django settings for backend project.
 
@@ -81,11 +83,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'taskdb',
-        'USER': '3nYHK3A1V5M7qE6.root',
-        'PASSWORD': 'hG1MG7cHC5qWIC1g',
-        'HOST': 'gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com',
-        'PORT': '4000',
+        'NAME': os.environ.get('taskdb'),
+        'USER': os.environ.get('3nYHK3A1V5M7qE6.root'),
+        'PASSWORD':os.environ.get( 'hG1MG7cHC5qWIC1g'),
+        'HOST': os.environ.get('gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com'),
+        'PORT': os.environ.get('4000'),
         'OPTIONS': {
            
             'ssl': {
