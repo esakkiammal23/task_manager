@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-e18q!%s78upvr_mbyg%o)349mjfscgjsl%l9kxr)q&tuz5vx$1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -81,13 +82,18 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'taskdb',
-        'USER': 'root',
-        'PASSWORD': 'MYSQLEsai@2005',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'USER': '3nYHK3A1V5M7qE6.root',
+        'PASSWORD': 'hG1MG7cHC5qWIC1g',
+        'HOST': 'gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com',
+        'PORT': '4000',
+        'OPTIONS': {
+           
+            'ssl': {
+                'ca': r'C:\Users\ELCOT\Desktop\Projects\task_manager\assets\isrgrootx1.pem',
     }
 }
-
+}
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
@@ -124,4 +130,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 CORS_ALLOW_ALL_ORIGINS = True
