@@ -16,6 +16,8 @@ A full-stack Task Manager CRUD application.
 - View Tasks
 - Mark Task as Completed
 - Delete Task
+- REST API Integration
+- Cloud Database Storage
 
 ## Live Demo
 
